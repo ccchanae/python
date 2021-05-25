@@ -1,44 +1,43 @@
 def ktactok():
-    a=['']*9
+    a=[' ']*9
     d=[]
-    while a.count('')>0:
-        for b in range(0,9):
-            b=input('P1 please input the location (0-8): ' )
+    while a.count(' ')>0:
+        b=input('P1 please input the location (0-8): ' )
         
-            if int(b) not in d:
-                d.append(int(b))
-                a[int(b)]='o'
-                print("\n".join(map(" | ".join, zip(*[iter(a)] * 3))))
+        if int(b) not in d:
+            d.append(int(b))
+            a[int(b)]='o'
+            print("\n".join(map(" | ".join, zip(*[iter(a)] * 3))))
         
-            else:
-                b=input('P1 please input a correct location (0-8): ' )
-                d.append(int(b))
-                a[int(b)]='o'
-                print("\n".join(map(" | ".join, zip(*[iter(a)] * 3))))
+        else:
+            b=input('P1 please input a correct location (0-8): ' )
+            d.append(int(b))
+            a[int(b)]='o'
+            print("\n".join(map(" | ".join, zip(*[iter(a)] * 3))))
 
-            if a[0]==a[1]==a[2]!='' or a[3]==a[4]==a[5]!='' or a[6]==a[7]==a[8]!='' or a[0]==a[3]==a[6]!='' or a[1]==a[4]==a[7]!='' or a[2]==a[5]==a[8]!='' or a[0]==a[4]==a[8]!='' or a[2]==a[4]==a[6]!='' :
-                print('YOU WIN')                
-                break
+        if a[0]==a[1]==a[2]!=' ' or a[3]==a[4]==a[5]!=' ' or a[6]==a[7]==a[8]!=' ' or a[0]==a[3]==a[6]!=' ' or a[1]==a[4]==a[7]!=' ' or a[2]==a[5]==a[8]!=' ' or a[0]==a[4]==a[8]!=' ' or a[2]==a[4]==a[6]!=' ' :
+            print('YOU WIN')                
+            break
             
-            elif a.count('')==0:
-                return 'GAME OVER!'
-        for c in range(0,9):
-            c=input('P2 please input the location (0-8): ' )
+        elif a.count(' ')==0:
+            return 'GAME OVER!'
+            
+        c=input('P2 please input the location (0-8): ' )
         
-            if int(c) not in d:
-                d.append(int(c))
-                a[int(c)]='x'
-                print("\n".join(map(" | ".join, zip(*[iter(a)] * 3))))
-            else:
-                c=input('P2 please input a correct location (0-8): ' )
-                d.append(int(c))
-                a[int(c)]='x'
-                print("\n".join(map(" | ".join, zip(*[iter(a)] * 3))))
+        if int(c) not in d:
+            d.append(int(c))
+            a[int(c)]='x'
+            print("\n".join(map(" | ".join, zip(*[iter(a)] * 3))))
+        else:
+            c=input('P2 please input a correct location (0-8): ' )
+            d.append(int(c))
+            a[int(c)]='x'
+            print("\n".join(map(" | ".join, zip(*[iter(a)] * 3))))
 
-                if a[0]==a[1]==a[2]!='' or a[3]==a[4]==a[5]!='' or a[6]==a[7]==a[8]!='' or a[0]==a[3]==a[6]!='' or a[1]==a[4]==a[7]!='' or a[2]==a[5]==a[8]!='' or a[0]==a[4]==a[8]!='' or a[2]==a[4]==a[6]!='' :
-                    print('YOU WIN')
-                    break
+            if a[0]==a[1]==a[2]!=' ' or a[3]==a[4]==a[5]!=' ' or a[6]==a[7]==a[8]!=' ' or a[0]==a[3]==a[6]!=' ' or a[1]==a[4]==a[7]!=' ' or a[2]==a[5]==a[8]!=' ' or a[0]==a[4]==a[8]!=' ' or a[2]==a[4]==a[6]!=' ' :
+                print('YOU WIN')
+                break
                 
-                elif a.count('')==0:
-                    return 'GAME OVER!'
-                    break
+            elif a.count(' ')==0:
+                return 'GAME OVER!'
+                break
